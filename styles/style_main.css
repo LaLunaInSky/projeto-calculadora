@@ -53,4 +53,12 @@ main {
 
 .botõesLinhas {
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+#linha2 > article {
+    background-color: var(--branco04);
+    margin: 0px 2px;
+    padding: 25px;
 }
