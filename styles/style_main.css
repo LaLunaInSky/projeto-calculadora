@@ -56,13 +56,19 @@ main {
 h1 {
     font-weight: normal;
     font-size: 1.5em;
+    color: var(--preto01);
     text-align: center;
 }
 
 .botõesCalculadora {
-    background-color: var(--branco06);
     height: 70%;
     padding: 10px;
+}
+
+#linha1 > article:nth-last-child(1) > h1 {
+    display: flex;
+    font-size: 1.8em;
+    justify-content: center;
 }
 
 .botõesLinhas {
@@ -70,7 +76,12 @@ h1 {
     justify-content: space-between;
 }
 
+#linha1, #linha2, #linha3, #linha4 {
+    margin-bottom: 10px;
+}
+
 .botõesLinhas article {
+    border-radius: 10px;
     background-color: var(--branco05);
     padding: 25px;
     width: 40px;
