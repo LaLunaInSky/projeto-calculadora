@@ -50,3 +50,7 @@ main {
     border-radius: 15px;
     height: 25%;
 }
+
+.botõesLinhas {
+    display: flex;
+}
