@@ -28,6 +28,8 @@
 html, body {
     height: 100vh;
     background-color: var(--branco06);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
 }
 
 body {
@@ -54,11 +56,17 @@ main {
 .botõesLinhas {
     display: flex;
     flex-flow: row nowrap;
+    margin: 10px 0px;
     justify-content: space-around;
 }
 
-#linha2 > article {
-    background-color: var(--branco04);
+.botõesLinhas article {
+    background-color: var(--branco05);
     margin: 0px 2px;
     padding: 25px;
+    cursor: pointer;
+}
+
+.botõesLinhas article:hover {
+    background-color: var(--branco03);
 }
