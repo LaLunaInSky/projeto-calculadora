@@ -58,6 +58,7 @@ main {
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: flex-end;
+    overflow: hidden;
 }
 
 .resultadoConta h1 {
