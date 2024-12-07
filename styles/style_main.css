@@ -105,41 +105,41 @@ h1 {
     padding: 25px;
     width: 40px;
     cursor: pointer;
-    transition: background-color 500ms ease-in-out;
+    transition: background-color 200ms ease;
 }
 
 .botõesLinhas article > h1 {
     color: light-dark(var(--branco06), var(--preto01));
     font-weight: bolder;
-    transition: color 500ms ease-in-out;
+    transition: color 200ms ease;
 }
 
 #linha1 article, .botõesLinhas article:nth-last-child(1), #linha5 article:nth-last-child(2) {
     background-color: light-dark(var(--branco05), var(--preto02));
-    transition: background-color 500ms ease-in-out;
+    transition: background-color 200ms ease;
 }
 
 #linha1 article > h1, .botõesLinhas article:nth-last-child(1) > h1, #linha5 article:nth-last-child(2) > h1 {
     color: light-dark(var(--branco02), var(--preto05));
-    transition: color 500ms ease-in-out;
+    transition: color 200ms ease;
 }
 
 .botõesLinhas article:hover {
     background-color: light-dark(var(--branco05), var(--preto02));
-    transition: background-color 500ms ease-in-out;
+    transition: background-color 200ms ease;
 }
 
 .botõesLinhas article:hover > h1 {
     color: light-dark(var(--branco02), var(--preto05));
-    transition: color 500ms ease-in-out;
+    transition: color 200ms ease;
 }
 
 #linha1 article:hover, .botõesLinhas article:nth-last-child(1):hover, #linha5 article:nth-last-child(2):hover {
     background-color: light-dark(var(--branco03), var(--preto03));
-    transition: background-color 500ms ease-in-out;
+    transition: background-color 200ms ease;
 }
 
 #linha1 article:hover > h1, .botõesLinhas article:nth-last-child(1):hover > h1, #linha5 article:nth-last-child(2):hover > h1 {
     color: light-dark(var(--branco06), var(--preto01));
-    transition: color 500ms ease-in-out;
+    transition: color 200ms ease;
 }
