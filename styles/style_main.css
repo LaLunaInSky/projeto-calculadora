@@ -63,13 +63,17 @@ main {
     align-items: flex-end;*/
 
 .mostradorCalculadora > section:first-child {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    position: relative;
-    z-index: 1;
+    cursor: pointer;
+    position: absolute;
     background-color: red;
+}
+
+.mostradorCalculadora > section:first-child > section:first-child {
+    color: light-dark(var(--preto03), var(--branco04));
+}
+
+.mostradorCalculadora > section:first-child > section:last-child {
+    color: light-dark(var(--preto02), var(--preto01));
 }
 
 .mostradorCalculadora > section:last-child {
@@ -77,9 +81,6 @@ main {
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: flex-end;
-    position: relative;
-    z-index: 0;
-    background-color: blue;
 }
 
 .resultadoConta {
