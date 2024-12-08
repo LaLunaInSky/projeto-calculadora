@@ -61,17 +61,25 @@ main {
     overflow: hidden;
 }
 
-.resultadoConta h1 {
-    padding: 20px;
-    font-size: 1.3em;
+.resultadoConta {
     color: light-dark(var(--preto03), var(--branco04));
 }
 
-.contaAtual h1 {
+.resultadoConta h1 {
     padding: 20px;
-    font-size: 3.3em;
-    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.contaAtual {
+    text-align: right;
+    background-color: red;
     color: light-dark(var(--preto02), var(--preto01));
+}
+
+.contaAtual h1 {
+    font-size: 3.3em;
+    padding: 20px;
+    font-weight: bolder;
 }
 
 h1 {
