@@ -9,7 +9,7 @@ let númerosClicadosUnidos = ''
 let históricoConta = []
 let históricoContaFormatado = ''
 
-function calcular() {
+function ativaçãoDoIgual() {
     if (númerosClicados != '' && históricoConta.length == 2) {
         if (númerosClicados[0] != '-') {
             históricoConta.push(Number(númerosClicadosUnidos))
@@ -21,17 +21,29 @@ function calcular() {
             deletarListaDeNúmerosClicados()
         }
     }
+    calcular()
+}
+
+function calcular() {
+    let resuladoConta = 0
 
     switch (históricoConta[1]) {
         case 'x'://multiplicação
+            resuladoConta = históricoConta[0] * históricoConta[2]
             break
         case '÷'://divisão
+            resuladoConta = históricoConta[0] / históricoConta[2]
             break
         case '+'://adição
+            resuladoConta = históricoConta[0] + históricoConta[2]
             break
         case '-'://subtração
+            resuladoConta = históricoConta[0] - históricoConta[2]
             break
     }
+
+    númerosClicadosUnidos = String(resuladoConta)
+    mostradorContaAtual.innerText = númerosClicadosUnidos.replace('.', ',')
 }
 
 function mostrarHistóricoContaFormatado() {
@@ -56,7 +68,13 @@ function subirParaOHistórico(operaçãoClicada) {
     } else if (históricoConta.length == 2 && históricoConta[1] != operaçãoClicada) {
         históricoConta.pop()
         históricoConta.push(operaçãoClicada)
+        mostrarHistóricoContaFormatado() 
+    } else if (históricoConta.length == 3 && númerosClicadosUnidos != '') {
+        deletarListaDoHistóricoConta()
+        históricoConta.push(Number(númerosClicadosUnidos))
+        históricoConta.push(operaçãoClicada)
         mostrarHistóricoContaFormatado()
+        deletarListaDeNúmerosClicados()
     }
 }
 
@@ -172,7 +190,7 @@ function analisador() {
             númeroAcionado("0")
             break
         case btns[18]:// =
-            calcular()
+            ativaçãoDoIgual()
             break
         case btns[19]:// -
             subirParaOHistórico('-') 
@@ -183,4 +201,5 @@ function analisador() {
 function botãoClicado(btn) {
     btnClicado = btn
     analisador()
+    console.log(históricoConta)
 }
