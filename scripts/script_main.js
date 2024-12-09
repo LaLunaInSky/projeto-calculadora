@@ -60,15 +60,24 @@ function mostrarHistóricoContaFormatado() {
 }
 
 function subirParaOHistórico(operaçãoClicada) {
-    if (númerosClicados != '') {
+    if (númerosClicados != '' && históricoConta == '') {
         históricoConta.push(Number(númerosClicadosUnidos))
         históricoConta.push(operaçãoClicada)
         mostrarHistóricoContaFormatado()
         deletarListaDeNúmerosClicados()
-    } else if (históricoConta.length == 2 && históricoConta[1] != operaçãoClicada) {
+    } else if (históricoConta.length == 2 && históricoConta[1] != operaçãoClicada && númerosClicados == '') {
         históricoConta.pop()
         históricoConta.push(operaçãoClicada)
-        mostrarHistóricoContaFormatado() 
+        mostrarHistóricoContaFormatado()
+    } else if (históricoConta.length == 2 && númerosClicados != '') {
+        console.log('chegou aqui 1') 
+        históricoConta.push(Number(númerosClicadosUnidos))
+        calcular()
+        históricoConta[0] = Number(númerosClicadosUnidos)
+        históricoConta[1] = operaçãoClicada
+        históricoConta.splice(2, 1)
+        mostrarHistóricoContaFormatado()
+        deletarListaDeNúmerosClicados()
     } else if (históricoConta.length == 3 && númerosClicadosUnidos != '') {
         deletarListaDoHistóricoConta()
         históricoConta.push(Number(númerosClicadosUnidos))
@@ -83,7 +92,14 @@ function uniãoListaNúmerosClicados() {
     for (let count = 0; count < númerosClicados.length; count++) {
         númerosClicadosUnidos += númerosClicados[count]
     }
-    mostradorContaAtual.innerText = númerosClicadosUnidos.replace('.', ',')
+
+    if (númerosClicados[0] == '-'  && númerosClicados.length == 1) {
+        mostradorContaAtual.innerText = `${númerosClicados}0`
+    } else  if (númerosClicados == '') {
+        mostradorContaAtual.innerText = 0
+    } else {
+        mostradorContaAtual.innerText = númerosClicadosUnidos.replace('.', ',')
+    }
 }
 
 function mudançaDePositivoOuNegativoNúmeroClicado() {
@@ -202,4 +218,6 @@ function botãoClicado(btn) {
     btnClicado = btn
     analisador()
     console.log(históricoConta)
+    console.log(númerosClicados)
+    console.log(númerosClicadosUnidos)
 }
