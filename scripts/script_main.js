@@ -217,7 +217,4 @@ function analisador() {
 function botãoClicado(btn) {
     btnClicado = btn
     analisador()
-    console.log(históricoConta)
-    console.log(númerosClicados)
-    console.log(númerosClicadosUnidos)
 }

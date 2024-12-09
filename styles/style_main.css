@@ -104,6 +104,7 @@ main {
 }
 
 .contaAtual {
+    background-color: red;
     color: light-dark(var(--preto02), var(--preto01));
 }
 
