@@ -65,15 +65,26 @@ main {
 .mostradorCalculadora > section:first-child {
     cursor: pointer;
     position: absolute;
-    background-color: red;
+    margin-left: 12px;
+    font-size: 2em;
+}
+
+.mostradorCalculadora > section:first-child > section {
+    display: none;
 }
 
 .mostradorCalculadora > section:first-child > section:first-child {
     color: light-dark(var(--preto03), var(--branco04));
+    margin-top: 14px;
+    margin-bottom: 42px;
 }
 
 .mostradorCalculadora > section:first-child > section:last-child {
     color: light-dark(var(--preto02), var(--preto01));
+}
+
+.mostradorCalculadora > section:first-child > section:last-child >  div:last-child, .mostradorCalculadora > section:first-child > section:first-child >  div:last-child {
+    margin-left: 316px;
 }
 
 .mostradorCalculadora > section:last-child {
