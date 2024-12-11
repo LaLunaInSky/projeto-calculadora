@@ -1,3 +1,0 @@
-363-antes do limite!
-392-limite!
-421-passou do limite! aparecer seta á esquerda!
