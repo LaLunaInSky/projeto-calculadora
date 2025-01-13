@@ -4,6 +4,8 @@ let grupoBtns = [...document.querySelectorAll('div')]
 let mostradorCalculadora =  document.querySelector('.mostradorCalculadora')
 let btnSelecionado = ''
 let grupoNúmerosSelecionados = []
+let grupoHistóricoOperação = []
+let conjuntoStringGrupoNúmerosSelecionados = ''
 
 let organizaçãoNúmerosSelecionados = (btn)=>{
     let númeroSelecionado = btn
@@ -14,7 +16,16 @@ let organizaçãoNúmerosSelecionados = (btn)=>{
             grupoNúmerosSelecionados.push(númeroSelecionado)
         }
     }
-    console.log(grupoNúmerosSelecionados + " .1")
+}
+
+let organizaçãoHistórico = (string) => {
+    if (string != '') {
+        grupoHistóricoOperação.push(string)
+    }
+    mostradorCalculadora.children[0].innerHTML = grupoHistóricoOperação
+    
+    console.log(string + " ...")
+    console.log(grupoHistóricoOperação)
 }
 
 grupoBtns.map((elemento)=>{
@@ -25,17 +36,23 @@ grupoBtns.map((elemento)=>{
             organizaçãoNúmerosSelecionados(btnSelecionado)
         } else {
             grupoNúmerosSelecionados = []
+            organizaçãoHistórico(conjuntoStringGrupoNúmerosSelecionados)
+            conjuntoStringGrupoNúmerosSelecionados = ''
         }
-
-        console.log(grupoNúmerosSelecionados + " .2")
+        
         if (grupoNúmerosSelecionados.length > 0) {
             grupoNúmerosSelecionados.map((elemento, indice)=>{
-                if (indice == 0) {
-                    mostradorCalculadora.children.innerHTML = elemento
+                if (indice > 0) {
+                    conjuntoStringGrupoNúmerosSelecionados += elemento
+                    mostradorCalculadora.children[1].innerHTML += elemento
                 } else {
-                    mostradorCalculadora.children.innerHTML += elemento
+                    conjuntoStringGrupoNúmerosSelecionados = elemento
+                    mostradorCalculadora.children[1].innerHTML = elemento
                 }
             })
+        } else {
+            mostradorCalculadora.children[1].innerHTML = 0
         }
+        console.log(conjuntoStringGrupoNúmerosSelecionados)
     })
 })
