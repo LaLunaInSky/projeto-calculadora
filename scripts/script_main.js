@@ -21,10 +21,30 @@ let organizaçãoNúmerosSelecionados = (btn)=>{
 let organizaçãoHistórico = (string) => {
     if (string != '') {
         grupoHistóricoOperação.push(string)
+        if (grupoHistóricoOperação.length > 0) {
+            if (btnSelecionado == 'x' || btnSelecionado == '+' || btnSelecionado == '÷' || btnSelecionado == '-') {
+                console.log(grupoHistóricoOperação.length)
+                grupoHistóricoOperação.push(btnSelecionado)
+            }
+        }
+    } else {
+        if (grupoHistóricoOperação.length > 1) {
+            if (grupoHistóricoOperação[1] == 'x' || grupoHistóricoOperação[1] == '+' || grupoHistóricoOperação[1] == '÷' || grupoHistóricoOperação[1] == '-') {
+                if (btnSelecionado == 'x' || btnSelecionado == '+' || btnSelecionado == '÷' || btnSelecionado == '-') {
+                    grupoHistóricoOperação[1] = btnSelecionado
+                }
+            }
+        }
     }
-    mostradorCalculadora.children[0].innerHTML = grupoHistóricoOperação
     
-    console.log(string + " ...")
+    grupoHistóricoOperação.map((elemento, indice)=>{
+        if (indice > 0) {
+            mostradorCalculadora.children[0].innerHTML += ` ${elemento}`
+        } else {
+            mostradorCalculadora.children[0].innerHTML = elemento
+        }
+    })
+    
     console.log(grupoHistóricoOperação)
 }
 
