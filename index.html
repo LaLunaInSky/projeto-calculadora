@@ -3,92 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style_main.css" media="all">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="stylesheet" href="styles/style_adaptivo.css">
     <title>LaLunaInSky | Projeto Calculadora</title>
 </head>
 <body>
     <main>
-        <section class="mostradorCalculadora">
-            <section class="resultadoConta">
-                <h1>sem resultado ainda!</h1>
+        <aside class="corpoCalculadora">
+            <section class="mostradorCalculadora">
+                <div>
+                    sem resultado ainda!
+                </div>
+                <div>
+                    0
+                </div>
             </section>
-            <section class="contaAtual">
-                <h1>0</h1>
+            <section class="botõesCalculadora">
+                <section class="botõesLinhas" id="linha1">
+                    <div onclick="botãoClicado('+/-')" class="destaque">
+                        +/-
+                    </div>
+                    <div onclick="botãoClicado('delConta')" class="destaque">
+                        CE
+                    </div>
+                    <div onclick="botãoClicado('delTudo')" class="destaque">
+                        C
+                    </div>
+                    <div onclick="botãoClicado('delUm')" class="destaque">
+                        <img src="./images/icone_backspace.png" alt="icone backspace">
+                    </div>
+                </section>
+                <section class="botõesLinhas" id="linha2">
+                    <div onclick="botãoClicado('7')">
+                        7
+                    </div>
+                    <div onclick="botãoClicado('8')">
+                        8
+                    </div>
+                    <div onclick="botãoClicado('9')">
+                        9
+                    </div>
+                    <div onclick="botãoClicado('/')" class="destaque">
+                        &#247;
+                    </div>
+                </section>
+                <section class="botõesLinhas" id="linha3">
+                    <div onclick="botãoClicado('4')">
+                        4
+                    </div>
+                    <div onclick="botãoClicado('5')">
+                        5
+                    </div>
+                    <div onclick="botãoClicado('6')">
+                        6
+                    </div>
+                    <div onclick="botãoClicado('*')" class="destaque">
+                        x
+                    </div>
+                </section>
+                <section class="botõesLinhas" id="linha4">
+                    <div onclick="botãoClicado('1')">
+                        1
+                    </div>
+                    <div onclick="botãoClicado('2')">
+                        2
+                    </div>
+                    <div onclick="botãoClicado('3')">
+                        3
+                    </div>
+                    <div onclick="botãoClicado('+')" class="destaque">
+                        +
+                    </div>
+                </section>
+                <section class="botõesLinhas" id="linha5">
+                    <div onclick="botãoClicado('.')">
+                        ,
+                    </div>
+                    <div onclick="botãoClicado('0')">
+                        0
+                    </div>
+                    <div onclick="botãoClicado('=')" class="destaque">
+                        =
+                    </div>
+                    <div onclick="botãoClicado('-')" class="destaque">
+                        -
+                    </div>
+                </section>
             </section>
-        </section>
-        <section class="botõesCalculadora">
-            <section class="botõesLinhas" id="linha1">
-                <article onclick="botãoClicado('+/-')">
-                    <h1>+/-</h1>
-                </article>
-                <article onclick="botãoClicado('delConta')">
-                    <h1>CE</h1>
-                </article>
-                <article onclick="botãoClicado('delTudo')">
-                    <h1>C</h1>
-                </article>
-                <article onclick="botãoClicado('delUm')">
-                    <h1 class="material-symbols-outlined">backspace</h1>
-                </article>
-            </section>
-            <section class="botõesLinhas" id="linha2">
-                <article onclick="botãoClicado('7')">
-                    <h1>7</h1>
-                </article>
-                <article onclick="botãoClicado('8')">
-                    <h1>8</h1>
-                </article>
-                <article onclick="botãoClicado('9')">
-                    <h1>9</h1>
-                </article>
-                <article onclick="botãoClicado('/')">
-                    <h1>&#247;</h1>
-                </article>
-            </section>
-            <section class="botõesLinhas" id="linha3">
-                <article onclick="botãoClicado('4')">
-                    <h1>4</h1>
-                </article>
-                <article onclick="botãoClicado('5')">
-                    <h1>5</h1>
-                </article>
-                <article onclick="botãoClicado('6')">
-                    <h1>6</h1>
-                </article>
-                <article onclick="botãoClicado('*')">
-                    <h1>x</h1>
-                </article>
-            </section>
-            <section class="botõesLinhas" id="linha4">
-                <article onclick="botãoClicado('1')">
-                    <h1>1</h1>
-                </article>
-                <article onclick="botãoClicado('2')">
-                    <h1>2</h1>
-                </article>
-                <article onclick="botãoClicado('3')">
-                    <h1>3</h1>
-                </article>
-                <article onclick="botãoClicado('+')">
-                    <h1>+</h1>
-                </article>
-            </section>
-            <section class="botõesLinhas" id="linha5">
-                <article onclick="botãoClicado('.')">
-                    <h1>,</h1>
-                </article>
-                <article onclick="botãoClicado('0')">
-                    <h1>0</h1>
-                </article>
-                <article onclick="botãoClicado('=')">
-                    <h1>=</h1>
-                </article>
-                <article onclick="botãoClicado('-')">
-                    <h1>-</h1>
-                </article>
-            </section>
-        </section>
+        </aside>
     </main>
     <script src="scripts/script_main.js"></script>
 </body>

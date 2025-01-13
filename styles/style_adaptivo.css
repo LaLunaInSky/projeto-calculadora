@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+:root {
+    --preto01: #000000;
+    --preto02: #3C3C3C;
+    --preto03: #5E5E5E;
+    --preto04: #808080;
+    --preto05: #A2A2A2;
+    --preto06: #C3C3C3;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    background-color: var(--preto01);
+}
+
+body {
+    display: none;
+}
+
+@media (min-width:320px)  {
+    body {
+        display: block;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background-color: var(--preto04);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .corpoCalculadora {
+        width: 300px;
+        height: 430px;
+        padding: 15px 10px;
+        border-radius: 25px;
+        display: flex;
+        background-color: var(--preto01);
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mostradorCalculadora {
+        cursor: default;
+        width: 90%;
+        height: 20%;
+        display: flex;
+        border-radius: 20px;
+        background-color: var(--preto06);
+        flex-flow: column wrap;
+        text-align: right;
+        padding: 10px 15px;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        & > div:nth-child(1) {
+            font-size: 1em;
+        }
+
+        & > div:nth-child(2) {
+            font-size: 2.4em;
+            font-weight: bolder;
+        }
+    }
+
+    .botõesCalculadora {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .botõesLinhas {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        & div {
+            cursor: pointer;
+            display: flex;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+            width: 24%;
+            height: 93%;
+            font-size: 1.35em;
+            font-weight: bolder;
+            color: var(--preto01);
+            background-color: var(--preto05);
+            
+            &:hover {
+                background-color: var(--preto03);
+                color: var(--preto05);    
+            }
+            
+            &.destaque {
+                color: var(--preto06);
+                background-color: var(--preto02);
+
+                &:hover {
+                    background-color: var(--preto05);
+                    color: var(--preto02);
+
+                    & img {
+                        filter: invert(80%);
+                    }
+                }
+            }
+            
+            & img {
+                transform: scale(25%);
+            }
+        }
+    }
+}
+
+@media (min-width:480px)  {
+    .corpoCalculadora {
+        width: 400px;
+        height: 600px;
+    }
+
+    .mostradorCalculadora {
+        & > div:nth-child(1) {
+            font-size: 1.3em;
+        }
+
+        & > div:nth-child(2) {
+            font-size: 3.6em;
+        }
+    }
+
+    .botõesLinhas > div {
+        font-size: 1.75em;
+
+        & img {
+            transform: scale(35%);
+        }
+    }
+}
